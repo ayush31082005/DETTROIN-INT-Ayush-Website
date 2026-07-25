@@ -1,0 +1,206 @@
+/* NamastePreloader.css - Royal Blue & Slate Theme Door Animation */
+
+.namaste-preloader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  pointer-events: auto;
+  overflow: hidden;
+  display: flex;
+}
+
+.namaste-preloader-container.finished {
+  display: none;
+  pointer-events: none;
+}
+
+/* LEFT DOOR PANEL - Deep Midnight Slate & Navy */
+.namaste-door-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+  overflow: hidden;
+  transition: transform 1.3s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: 12px 0 35px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+/* RIGHT DOOR PANEL - Royal Blue & Indigo (Matches Website Navbar & Theme) */
+.namaste-door-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+  overflow: hidden;
+  transition: transform 1.3s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: -12px 0 35px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+/* SLIDE OPEN STATE */
+.namaste-preloader-container.open .namaste-door-left {
+  transform: translateX(-100%);
+}
+
+.namaste-preloader-container.open .namaste-door-right {
+  transform: translateX(100%);
+}
+
+/* CONTENT WRAPPER FOR FULL SCREEN CENTERING INSIDE EACH DOOR */
+.namaste-door-content {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.namaste-door-left .namaste-door-content {
+  left: 0;
+}
+
+.namaste-door-right .namaste-door-content {
+  right: 0;
+}
+
+/* GRAPHIC HOLDER */
+.namaste-hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: scale(1);
+  animation: floatPulse 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes floatPulse {
+  0% {
+    transform: scale(0.98) translateY(0px);
+  }
+  100% {
+    transform: scale(1.02) translateY(-6px);
+  }
+}
+
+/* SVG STYLING FOR LEFT & RIGHT DOORS */
+.namaste-door-left .namaste-hand-left {
+  fill: url(#goldGradient);
+  filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.4));
+}
+
+.namaste-door-left .namaste-hand-right {
+  fill: transparent;
+}
+
+.namaste-door-right .namaste-hand-left {
+  fill: transparent;
+}
+
+.namaste-door-right .namaste-hand-right {
+  fill: url(#navyGradient);
+  filter: drop-shadow(0 0 15px rgba(15, 23, 42, 0.5));
+}
+
+/* TEXT STYLING FOR LEFT & RIGHT DOORS */
+.namaste-text {
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+  font-size: clamp(4rem, 9vw, 7rem);
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-top: -15px;
+  line-height: 1.1;
+}
+
+.namaste-door-left .namaste-text {
+  background: linear-gradient(180deg, #fef08a 0%, #f59e0b 60%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 15px rgba(245, 158, 11, 0.4));
+}
+
+.namaste-door-right .namaste-text {
+  background: linear-gradient(180deg, #ffffff 0%, #93c5fd 60%, #1e3a8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 15px rgba(15, 23, 42, 0.4));
+}
+
+/* SUBTITLE SHLOKA / MOTTO */
+.namaste-subtext {
+  font-family: 'Montserrat', 'Cinzel', sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.namaste-door-left .namaste-subtext {
+  color: #fbbf24;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.namaste-door-right .namaste-subtext {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* CENTER DIVIDER SEAM GLOW */
+.namaste-seam-glow {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 100vh;
+  background: linear-gradient(to bottom, transparent, #fbbf24 30%, #38bdf8 70%, transparent);
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 0 12px #38bdf8;
+}
+
+.namaste-door-left .namaste-seam-glow {
+  right: 0;
+}
+
+.namaste-door-right .namaste-seam-glow {
+  left: 0;
+}
+
+/* SKIP BUTTON */
+.namaste-skip-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 35px;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.namaste-skip-btn:hover {
+  background: rgba(37, 99, 235, 0.8);
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+}
