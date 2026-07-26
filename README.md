@@ -1,74 +1,199 @@
-**Institute Website Project**
+# 🎓 DETTROIN Internship Assignment – Modern School Website
 
-The Institute Website Project is a full-stack MERN application designed for managing institute operations efficiently.
-It provides a modern responsive frontend, a secure admin dashboard, and a scalable backend architecture.
+A modern, responsive, and user-friendly School Website developed as part of the **DETTROIN Internship Assignment**. This project focuses on redesigning an existing school website with an improved UI/UX, responsive layouts, and better user experience. A good repository README should explain what the project does, how to run it, and who maintains it. :contentReference[oaicite:0]{index=0}
 
-**Features**
-**🎨 Frontend (React.js)**
-Fully responsive UI using modern CSS.
-Admin Dashboard for managing students, admissions, and data.
-API communication via Axios.
-Component-based architecture for easy maintenance.
+---
 
-**🧠 Backend (Node.js + Express)**
-MVC (Model-View-Controller) pattern for clean code structure.
-JWT Authentication for secure login & authorization.
-RESTful APIs for frontend communication.
-Multer for handling image & document uploads.
-MongoDB Atlas as cloud database.
+## 👨‍💻 Developer
 
-### Other Features
-- Modern and clean UI for both students and admin.
-- Secure and structured backend architecture.
-- Fully functional with real-time data management.
+**Name:** Ayush Chaubey
 
-## Tech Stack
-- **Frontend:** React.js, CSS3, Axios  
-- **Backend:** Node.js, Express.js, JWT, REST API, Multer, MVC Pattern  
-- **Database:** MongoDB Atlas  
+**Role:** MERN Stack & Flutter Developer
 
-**## 📁 Project Structure**
+**Email:** ayushchaubey19768@gmail.com
+
+**GitHub:** https://github.com/ayush31082005
+
+**Portfolio:** https://ayush-chaubey-portfolio-ebon.vercel.app
+
+---
+
+# 🌐 Live Demo
+
+🔗 https://dettroin-int-ayush-website-eight.vercel.app/
+
+---
+
+# 🚀 Features
+
+- 🎨 Modern UI/UX Design
+- 📱 Fully Responsive Design
+- 🏫 Home Page
+- ℹ️ About Page
+- 📚 Academics Section
+- 📝 Admissions
+- 👨‍🏫 Faculty
+- 🎉 Events
+- 🖼️ Gallery
+- 📞 Contact Page
+- 🔐 Login & Signup
+- ⚡ Fast Performance
+- 📊 Clean Layout
+- 🌍 Cross Browser Compatible
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+- React.js
+- Vite
+- React Router DOM
+- CSS3
+- Axios
+
+### Deployment
+
+- Vercel
+
+### Version Control
+
+- Git
+- GitHub
+
+---
+
+# 📂 Folder Structure
+
+```text
+frontend/
+│
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   ├── services/
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+├── vite.config.js
+└── vercel.json
+```
+
+---
+
+# 💻 Installation
+
+Clone the Repository
 
 ```bash
-mern-institute-project/
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
-│
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middleware/
-│   ├── uploads/
-│   ├── server.js
-│   └── package.json
-│
-├── .gitignore
-├── README.md
-└── package.json
+git clone https://github.com/ayush31082005/DETTROIN-INT-Ayush-Website.git
+```
 
+Go to Project
 
-**Installation & Setup**
-**1️⃣ Clone Repository**
-git clone https://github.com/dhruvyadav123/Institute_project.git
+```bash
+cd DETTROIN-INT-Ayush-Website/frontend
+```
 
-**2️⃣ Install Dependencies**
-# frontend
-cd frontend
+Install Dependencies
+
+```bash
 npm install
+```
 
-**# backend**
-cd backend
-npm install
+Run Development Server
 
-**3️⃣ Environment Variables**
-Create .env inside backend:
-PORT=5000
-MONGO_URI=your_mongodb_url
-JWT_SECRET=your_secret_key
+```bash
+npm run dev
+```
 
-**4️⃣ Run Project**
-npm run devNAME.git
+Create Production Build
+
+```bash
+npm run build
+```
+
+---
+
+# 📱 Responsive Support
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+---
+
+# 🎯 Project Objectives
+
+- Improve UI/UX
+- Modern Responsive Design
+- Better Navigation
+- Clean Code Structure
+- Performance Optimization
+- Easy User Experience
+
+---
+
+# 📌 Future Enhancements
+
+- Student Dashboard
+- Parent Dashboard
+- Teacher Dashboard
+- Online Admission Form
+- Fee Payment
+- Attendance Management
+- Online Results
+- Notifications
+
+---
+
+# 📷 Project Preview
+
+## 🏠 Home Page
+
+_Add your homepage screenshot here._
+
+## 📖 About
+
+_Add your about page screenshot here._
+
+## 🎓 Academics
+
+_Add your academics page screenshot here._
+
+## 📝 Admissions
+
+_Add your admissions page screenshot here._
+
+## 📞 Contact
+
+_Add your contact page screenshot here._
+
+---
+
+# 👤 Author
+
+**Ayush Chaubey**
+
+📧 ayushchaubey19768@gmail.com
+
+🌐 Portfolio: https://ayush-chaubey-portfolio-ebon.vercel.app/
+
+💻 GitHub: https://github.com/ayush31082005
+
+---
+
+# 📄 License
+
+This project was developed for the **DETTROIN Internship Assignment**.
+
+---
+
+## ⭐ If you like this project, don't forget to give it a Star.
