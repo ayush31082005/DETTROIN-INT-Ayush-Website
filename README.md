@@ -1,6 +1,6 @@
 # 🎓 DETTROIN Internship Assignment – Modern School Website
 
-A modern, responsive, and user-friendly School Website developed as part of the **DETTROIN Internship Assignment**. This project focuses on redesigning an existing school website with an improved UI/UX, responsive layouts, and better user experience.
+A modern, responsive, and user-friendly School Website developed as part of the **DETTROIN Internship Assignment**. This project focuses on redesigning an existing school website with an improved UI/UX, responsive layouts, and better user experience. A good repository README should explain what the project does, how to run it, and who maintains it. :contentReference[oaicite:0]{index=0}
 
 ---
 
@@ -18,17 +18,17 @@ A modern, responsive, and user-friendly School Website developed as part of the 
 
 ---
 
-## 🌐 Live Demo
+# 🌐 Live Demo
 
 🔗 https://dettroin-int-ayush-website-eight.vercel.app/
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
 - 🎨 Modern UI/UX Design
-- 📱 Fully Responsive Design (Mobile First)
-- 🏫 Home Page with Dynamic Hero Slider
+- 📱 Fully Responsive Design
+- 🏫 Home Page
 - ℹ️ About Page
 - 📚 Academics Section
 - 📝 Admissions
@@ -37,74 +37,47 @@ A modern, responsive, and user-friendly School Website developed as part of the 
 - 🖼️ Gallery
 - 📞 Contact Page
 - 🔐 Login & Signup
-- ⚡ Fast Performance with Vite
-- 📊 Clean Layout with Tailwind CSS
+- ⚡ Fast Performance
+- 📊 Clean Layout
 - 🌍 Cross Browser Compatible
-- 🎞️ Animated Sections with GSAP
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
 ### Frontend
 
-| Technology | Purpose |
-|---|---|
-| React.js | UI Framework |
-| Vite | Build Tool |
-| React Router DOM | Client-side Routing |
-| Tailwind CSS | Utility-first Styling |
-| GSAP + ScrollTrigger | Animations |
-| React Slick | Carousel / Slider |
-| Lucide React | Icon Library |
-| Axios | HTTP Client |
+- React.js
+- Vite
+- React Router DOM
+- CSS3
+- Axios
 
 ### Deployment
 
-| Platform | Purpose |
-|---|---|
-| Vercel | Frontend Deployment |
+- Vercel
 
 ### Version Control
 
-| Tool | Purpose |
-|---|---|
-| Git | Version Control |
-| GitHub | Remote Repository |
+- Git
+- GitHub
 
 ---
 
-## 📂 Folder Structure
+# 📂 Folder Structure
 
 ```text
 frontend/
 │
 ├── public/
 ├── src/
-│   ├── assets/           # Images, icons, media files
-│   ├── components/       # Reusable UI components
-│   │   ├── Navbar.jsx
-│   │   ├── Footer.jsx
-│   │   ├── ImpactBanner.jsx
-│   │   ├── WelcomeVideoSection.jsx
-│   │   ├── ManagementSection.jsx
-│   │   ├── LatestUpdatesSection.jsx
-│   │   ├── AboutSection.jsx
-│   │   └── AdmissionEnquirySection.jsx
-│   ├── layouts/          # Layout wrappers
-│   ├── pages/            # Route-level pages
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Admission.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Event.jsx
-│   │   ├── Faculity.jsx
-│   │   ├── Login.jsx
-│   │   └── Signup.jsx
-│   ├── services/         # API service functions
-│   ├── styles/           # Global styles
+│   ├── assets/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   ├── services/
+│   ├── styles/
 │   ├── App.jsx
-│   ├── index.css
 │   └── main.jsx
 │
 ├── package.json
@@ -114,33 +87,33 @@ frontend/
 
 ---
 
-## 💻 Installation
+# 💻 Installation
 
-### Clone the Repository
+Clone the Repository
 
 ```bash
 git clone https://github.com/ayush31082005/DETTROIN-INT-Ayush-Website.git
 ```
 
-### Go to Project Directory
+Go to Project
 
 ```bash
 cd DETTROIN-INT-Ayush-Website/frontend
 ```
 
-### Install Dependencies
+Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Run Development Server
+Run Development Server
 
 ```bash
 npm run dev
 ```
 
-### Create Production Build
+Create Production Build
 
 ```bash
 npm run build
@@ -148,68 +121,64 @@ npm run build
 
 ---
 
-## 📱 Responsive Support
+# 📱 Responsive Support
 
-| Device | Status |
-|---|---|
-| 🖥️ Desktop (1280px+) | ✅ Supported |
-| 💻 Laptop (1024px+) | ✅ Supported |
-| 📱 Tablet (768px+) | ✅ Supported |
-| 📲 Mobile (< 768px) | ✅ Supported |
+- Desktop
+- Laptop
+- Tablet
+- Mobile
 
 ---
 
-## 🎯 Project Objectives
+# 🎯 Project Objectives
 
-- ✅ Improve UI/UX of existing school website
-- ✅ Modern Responsive Design (Mobile First)
-- ✅ Better Navigation & User Flow
-- ✅ Clean Code Structure
-- ✅ Performance Optimization with Vite
-- ✅ Easy & Intuitive User Experience
-- ✅ GSAP Animations for visual richness
-- ✅ Single-slide mobile carousel for Instagram/Latest Updates
+- Improve UI/UX
+- Modern Responsive Design
+- Better Navigation
+- Clean Code Structure
+- Performance Optimization
+- Easy User Experience
 
 ---
 
-## 📌 Future Enhancements
+# 📌 Future Enhancements
 
-- [ ] Student Dashboard
-- [ ] Parent Dashboard
-- [ ] Teacher Dashboard
-- [ ] Online Admission Form
-- [ ] Fee Payment Integration
-- [ ] Attendance Management System
-- [ ] Online Results & Report Cards
-- [ ] Push Notifications
-
----
-
-## 📷 Project Preview
-
-### 🏠 Home Page
-
-> Dynamic hero slider with K-12 college content, Latest Updates carousel, Management section, and Welcome Video.
-
-### 📖 About
-
-> Institutional overview, mission, vision, and faculty highlights.
-
-### 🎓 Academics
-
-> Stream-wise academic programs — Science, Commerce & Arts.
-
-### 📝 Admissions
-
-> Multi-step admission enquiry form with class and stream selection.
-
-### 📞 Contact
-
-> Map integration with contact details and enquiry form.
+- Student Dashboard
+- Parent Dashboard
+- Teacher Dashboard
+- Online Admission Form
+- Fee Payment
+- Attendance Management
+- Online Results
+- Notifications
 
 ---
 
-## 👤 Author
+# 📷 Project Preview
+
+## 🏠 Home Page
+
+_Add your homepage screenshot here._
+
+## 📖 About
+
+_Add your about page screenshot here._
+
+## 🎓 Academics
+
+_Add your academics page screenshot here._
+
+## 📝 Admissions
+
+_Add your admissions page screenshot here._
+
+## 📞 Contact
+
+_Add your contact page screenshot here._
+
+---
+
+# 👤 Author
 
 **Ayush Chaubey**
 
@@ -221,11 +190,10 @@ npm run build
 
 ---
 
-## 📄 License
+# 📄 License
 
 This project was developed for the **DETTROIN Internship Assignment**.
-All rights reserved © 2025 Ayush Chaubey.
 
 ---
 
-## ⭐ If you like this project, don't forget to give it a Star on GitHub!
+## ⭐ If you like this project, don't forget to give it a Star.
