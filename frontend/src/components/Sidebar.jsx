@@ -53,9 +53,9 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
             {academicsOpen && (
               <div className="ml-4 mt-2 space-y-2 text-gray-300">
-                <SubLink to="/courses" label="Courses" onClick={toggleSidebar} />
-                <SubLink to="/admissions" label="Admissions" onClick={toggleSidebar} />
-                <SubLink to="/faculty" label="Faculty" onClick={toggleSidebar} />
+                <SubLink to="/pre-primary" label="🧸 Pre-Primary & Primary" onClick={toggleSidebar} />
+                <SubLink to="/secondary" label="🏫 Secondary (6th–12th)" onClick={toggleSidebar} />
+                <SubLink to="/faculty" label="👨‍🏫 Faculty" onClick={toggleSidebar} />
               </div>
             )}
           </div>

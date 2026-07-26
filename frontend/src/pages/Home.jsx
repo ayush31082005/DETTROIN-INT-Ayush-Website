@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import { 
+  Sparkles, 
+  Calendar, 
+  ArrowRight
+} from "lucide-react";
+
 import ImpactBanner from "../components/ImpactBanner";
 import WelcomeVideoSection from "../components/WelcomeVideoSection";
 import ManagementSection from "../components/ManagementSection";
@@ -14,74 +20,122 @@ import "slick-carousel/slick/slick-theme.css";
 import slide1 from "../assets/slide1.jpg";
 import slide2 from "../assets/slide2.jpeg";
 import slide3 from "../assets/slide3.webp";
-
+import labImage from "../assets/lab.jpg";
 
 function Home() {
+  const sliderRef = useRef(null);
+
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 4500,
+    fade: true,
     arrows: false,
+    customPaging: () => (
+      <div className="w-3.5 h-3.5 rounded-full bg-white/40 hover:bg-lime-400 transition-all duration-300"></div>
+    ),
   };
 
   const slides = [
     {
       img: slide1,
-      title: "Welcome to Sanskriti International College",
-      text: "Empowering students for a brighter future",
-      link: "/admissions",
-      btn: "Apply Now",
+      badge: "Nursery to 12th Grade • CBSE/State Board Curriculum",
+      title: "Nurturing Young Minds For a Brighter Future",
+      highlight: "Nursery to 12th",
+      subtitle:
+        "Providing holistic education, moral values, and academic brilliance from early childhood to Senior Secondary (+2 Science, Commerce & Arts).",
+      primaryBtn: "Apply For Admission 2025-26",
+      primaryLink: "/admissions",
+      secondaryBtn: "College Events",
+      secondaryLink: "/events",
     },
     {
-      img: slide2,
-      title: "Innovative Learning",
-      text: "Explore science & engineering excellence",
-      link: "/about",
-      btn: "Learn More",
+      img: labImage,
+      badge: "Modern STEM & Robotics Labs",
+      title: "Future-Ready Science & Experiential Learning",
+      highlight: "Experiential Learning",
+      subtitle:
+        "Empowering 11th & 12th Science students with state-of-the-art Physics, Chemistry, Biology and Computer AI laboratories.",
+      primaryBtn: "Explore Science Stream",
+      primaryLink: "/science",
+      secondaryBtn: "College Events",
+      secondaryLink: "/events",
     },
     {
       img: slide3,
-      title: "Arts & Creativity",
-      text: "Fostering imagination and expression",
-      link: "/arts",
-      btn: "Explore Arts",
+      badge: "Arts, Commerce & Sports Excellence",
+      title: "Shaping Leaders With All-Round Growth",
+      highlight: "All-Round Growth",
+      subtitle:
+        "From vibrant pre-primary activity zones to competitive Inter-College sports and creative arts, every child shines brightly.",
+      primaryBtn: "Apply Now",
+      primaryLink: "/admissions",
+      secondaryBtn: "College Events",
+      secondaryLink: "/events",
     },
   ];
 
   return (
     <div className="w-full overflow-x-hidden bg-slate-950 text-white">
-
-      {/* ================= HERO FULL SCREEN (100vh) ================= */}
-      <section className="w-full h-screen overflow-hidden relative">
-        <Slider {...settings}>
+      {/* ================= HERO SECTION (CLEAN SLIDER WITHOUT SIDE ARROWS) ================= */}
+      <section className="w-full min-h-[92vh] md:h-screen overflow-hidden relative group">
+        <Slider ref={sliderRef} {...settings}>
           {slides.map((s, i) => (
-            <div key={i} className="w-full h-screen">
-              <div className="relative w-full h-full">
-                <img
-                  src={s.img}
-                  alt="slide"
-                  className="w-full h-full object-cover"
-                />
+            <div key={i} className="w-full h-[92vh] md:h-screen relative outline-none">
+              {/* Clear & Bright Background Image */}
+              <img
+                src={s.img}
+                alt={s.title}
+                className="w-full h-full object-cover brightness-90 transition-transform duration-1000"
+              />
 
-                <div className="absolute inset-0 bg-black/55 flex items-center justify-center pt-16 pb-20">
-                  <div className="text-center px-4">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-                      {s.title}
-                    </h1>
-                    <p className="text-lg md:text-xl text-gray-200 mb-6 drop-shadow-md">
-                      {s.text}
-                    </p>
+              {/* Light Subtle Gradient Vignette so text is readable & image is crystal clear */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-black/40 to-black/20 flex items-center justify-center pt-16 pb-24 px-4 sm:px-8">
+                <div className="max-w-4xl mx-auto w-full text-center flex flex-col items-center justify-center space-y-5 md:space-y-6">
+                  
+                  {/* Top Floating Badge */}
+                  <div className="inline-flex items-center gap-2 bg-slate-950/70 border border-lime-400/50 backdrop-blur-md px-4 py-1.5 rounded-full text-lime-300 text-xs sm:text-sm font-bold tracking-wide shadow-xl">
+                    <Sparkles className="w-4 h-4 text-lime-400 animate-spin" />
+                    <span>{s.badge}</span>
+                  </div>
+
+                  {/* Main Title */}
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-2xl">
+                    {s.title.split(s.highlight)[0]}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 via-amber-300 to-blue-400 underline underline-offset-8 decoration-lime-400/50">
+                      {s.highlight}
+                    </span>
+                    {s.title.split(s.highlight)[1]}
+                  </h1>
+
+                  {/* Subtitle */}
+                  <p className="text-slate-200 text-sm sm:text-base md:text-lg max-w-2xl font-medium leading-relaxed drop-shadow-lg mx-auto">
+                    {s.subtitle}
+                  </p>
+
+                  {/* CTA Buttons - Centered */}
+                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2">
                     <Link
-                      to={s.link}
-                      className="inline-block bg-pink-500 hover:bg-pink-600 px-8 py-3 rounded-full font-semibold transition shadow-xl hover:scale-105"
+                      to={s.primaryLink}
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-lime-400 to-emerald-500 hover:from-lime-300 hover:to-emerald-400 text-slate-950 px-7 sm:px-9 py-3.5 rounded-xl font-extrabold text-sm sm:text-base transition-all duration-300 shadow-xl shadow-lime-500/25 hover:scale-105 group/btn"
                     >
-                      {s.btn}
+                      <span>{s.primaryBtn}</span>
+                      <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+
+                    <Link
+                      to={s.secondaryLink}
+                      className="inline-flex items-center gap-2 bg-slate-950/60 hover:bg-slate-900/80 text-white border border-white/30 backdrop-blur-md px-6 sm:px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 hover:border-lime-400/60"
+                    >
+                      <Calendar className="w-4 h-4 text-lime-400" />
+                      <span>{s.secondaryBtn}</span>
                     </Link>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -105,9 +159,6 @@ function Home() {
 
       {/* ================= ABOUT SECTION (KRISHNA INTERNATIONAL STYLE + GSAP) ================= */}
       <AboutSection />
-
-      {/* ================= ACADEMICS ================= */}
-    
 
       {/* ================= ADMISSION ENQUIRY ================= */}
       <AdmissionEnquirySection />
