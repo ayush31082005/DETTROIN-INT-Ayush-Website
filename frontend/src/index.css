@@ -67,6 +67,16 @@
   font-size: 12px !important;
 }
 
+/* Forced Mobile Responsive Slider Styles */
+@media (max-width: 640px) {
+  .latest-updates-slider .slick-slide {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
 /* Fix slick.woff slow network font intervention */
 @font-face {
   font-family: 'slick';

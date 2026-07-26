@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Slider from "react-slick";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +19,26 @@ const LatestUpdatesSection = () => {
   const sliderRef = useRef(null);
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
+  const [slidesToShow, setSlidesToShow] = useState(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const w = window.innerWidth;
+      if (w <= 640) {
+        setSlidesToShow(1);
+      } else if (w <= 960) {
+        setSlidesToShow(2);
+      } else if (w <= 1280) {
+        setSlidesToShow(3);
+      } else {
+        setSlidesToShow(4);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const updates = [
     {
@@ -113,7 +133,7 @@ const LatestUpdatesSection = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
@@ -127,14 +147,14 @@ const LatestUpdatesSection = () => {
         },
       },
       {
-        breakpoint: 1024,
+        breakpoint: 960,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -172,7 +192,7 @@ const LatestUpdatesSection = () => {
         </div>
 
         {/* CAROUSEL WRAPPER */}
-        <div className="relative px-1 sm:px-4 pb-6">
+        <div className="latest-updates-slider relative px-1 sm:px-4 pb-6">
           <button
             onClick={() => sliderRef.current?.slickPrev()}
             className="hidden md:flex absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 z-20 bg-white text-slate-900 p-2.5 md:p-3 rounded-full shadow-2xl hover:bg-lime-400 hover:scale-110 transition-all border border-slate-200"
@@ -189,7 +209,7 @@ const LatestUpdatesSection = () => {
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
-          <Slider ref={sliderRef} {...sliderSettings}>
+          <Slider key={slidesToShow} ref={sliderRef} {...sliderSettings}>
             {updates.map((item) => (
               <div key={item.id} className="px-2 sm:px-3 py-2">
                 <div className="bg-white text-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 hover:-translate-y-2 transition-all duration-300 flex flex-col h-[430px] sm:h-[440px] md:h-[450px] group max-w-sm sm:max-w-none mx-auto">
@@ -256,4 +276,5 @@ const LatestUpdatesSection = () => {
 };
 
 export default LatestUpdatesSection;
+
 
