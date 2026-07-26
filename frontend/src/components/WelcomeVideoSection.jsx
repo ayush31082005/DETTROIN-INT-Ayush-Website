@@ -17,7 +17,7 @@ const WelcomeVideoSection = () => {
           <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight">
             <span className="text-lime-400">Welcome to </span>
             <span className="text-blue-400 relative inline-block">
-              Sanskriti International College
+              NextGen College
               {/* Decorative Underline Swoosh */}
               <svg
                 className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-36 md:w-48 h-2.5 text-amber-500"
@@ -110,7 +110,7 @@ const WelcomeVideoSection = () => {
                   <iframe
                     className="w-full h-full object-cover"
                     src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0&enablejsapi=1`}
-                    title="Sanskriti International College Campus Tour Video"
+                    title="NextGen College Campus Tour Video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
@@ -132,7 +132,7 @@ const WelcomeVideoSection = () => {
             </h3>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              At Sanskriti International College, happiness is at the heart of learning.
+              At NextGen College, happiness is at the heart of learning.
               We provide an enriching environment for students from Nursery up to 12th Grade
               (+2 Science, Commerce & Arts), where curiosity is nurtured, values are instilled,
               and academic dreams come true.

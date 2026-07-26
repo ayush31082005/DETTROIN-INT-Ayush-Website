@@ -78,7 +78,7 @@ const Login = () => {
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white text-xl font-extrabold shadow-xl">S</div>
-            <span className="text-white font-extrabold text-lg">Sanskriti International College</span>
+            <span className="text-white font-extrabold text-lg">NextGen College</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-snug mb-4">
             Welcome Back to Your{" "}
@@ -122,7 +122,7 @@ const Login = () => {
           {/* Mobile logo */}
           <div className="flex lg:hidden items-center gap-3 mb-8 justify-center">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white text-xl font-extrabold shadow-xl">S</div>
-            <span className="text-white font-extrabold text-base">Sanskriti International College</span>
+            <span className="text-white font-extrabold text-base">NextGen College</span>
           </div>
 
           {/* Card */}

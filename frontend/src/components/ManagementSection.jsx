@@ -195,7 +195,7 @@ const ManagementSection = () => {
                 </div>
 
                 <p className="text-gray-600 text-sm md:text-base leading-relaxed pt-1">
-                  At Sanskriti International College, we take pride in shaping not only
+                  At NextGen College, we take pride in shaping not only
                   bright minds but also compassionate hearts. For us, education
                   is a holistic journey that extends beyond academic success,
                   nurturing emotional well-being, moral values, and resilience. We

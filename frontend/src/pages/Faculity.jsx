@@ -294,7 +294,7 @@ const HOD_LEADERS = [
 /* ── FAQ Data ──────────────────────────────────────────────── */
 const FAQS = [
   {
-    q: "What is the qualification standard for teachers at Sanskriti International College?",
+    q: "What is the qualification standard for teachers at NextGen College?",
     a: "100% of our faculty members hold Post-Graduate degrees (M.Sc., M.A., M.Tech, M.Ed.), with over 20% holding Ph.D. doctorates. Pre-Primary teachers are Montessori and Early Childhood certified.",
   },
   {
@@ -432,7 +432,7 @@ function Faculity() {
           </h1>
           <p className="text-gray-200 text-base md:text-lg max-w-2xl mx-auto leading-relaxed drop-shadow">
             Meet our highly qualified team of educators, Ph.D. scholars, Montessori trainers, and sports coaches dedicated to nurturing students at{" "}
-            <strong className="text-white">Sanskriti International College</strong>.
+            <strong className="text-white">NextGen College</strong>.
           </p>
         </div>
       </section>

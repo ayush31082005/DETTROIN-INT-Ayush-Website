@@ -143,7 +143,7 @@ const LatestUpdatesSection = () => {
       handle: "sanskriticollege",
       date: "1 month ago",
       caption:
-        "On a cheerful Father's Day morning, Sanskriti International College celebrated our real-life superheroes! 🦸‍♂️👨‍👦",
+        "On a cheerful Father's Day morning, NextGen College celebrated our real-life superheroes! 🦸‍♂️👨‍👦",
       likes: "420",
     },
     {
@@ -155,7 +155,7 @@ const LatestUpdatesSection = () => {
       handle: "sanskriticollege",
       date: "1 month ago",
       caption:
-        "Sanskriti International College observed International Yoga Day with holistic mindfulness & yoga sessions 🧘‍♀️✨",
+        "NextGen College observed International Yoga Day with holistic mindfulness & yoga sessions 🧘‍♀️✨",
       likes: "610",
     },
     {

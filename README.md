@@ -1,74 +1,231 @@
-**Institute Website Project**
+# 🎓 DETTROIN Internship Assignment – Modern School Website
 
-The Institute Website Project is a full-stack MERN application designed for managing institute operations efficiently.
-It provides a modern responsive frontend, a secure admin dashboard, and a scalable backend architecture.
+A modern, responsive, and user-friendly School Website developed as part of the **DETTROIN Internship Assignment**. This project focuses on redesigning an existing school website with an improved UI/UX, responsive layouts, and better user experience.
 
-**Features**
-**🎨 Frontend (React.js)**
-Fully responsive UI using modern CSS.
-Admin Dashboard for managing students, admissions, and data.
-API communication via Axios.
-Component-based architecture for easy maintenance.
+---
 
-**🧠 Backend (Node.js + Express)**
-MVC (Model-View-Controller) pattern for clean code structure.
-JWT Authentication for secure login & authorization.
-RESTful APIs for frontend communication.
-Multer for handling image & document uploads.
-MongoDB Atlas as cloud database.
+## 👨‍💻 Developer
 
-### Other Features
-- Modern and clean UI for both students and admin.
-- Secure and structured backend architecture.
-- Fully functional with real-time data management.
+**Name:** Ayush Chaubey
 
-## Tech Stack
-- **Frontend:** React.js, CSS3, Axios  
-- **Backend:** Node.js, Express.js, JWT, REST API, Multer, MVC Pattern  
-- **Database:** MongoDB Atlas  
+**Role:** MERN Stack & Flutter Developer
 
-**## 📁 Project Structure**
+**Email:** ayushchaubey19768@gmail.com
+
+**GitHub:** https://github.com/ayush31082005
+
+**Portfolio:** https://ayush-chaubey-portfolio-ebon.vercel.app
+
+---
+
+## 🌐 Live Demo
+
+🔗 https://dettroin-int-ayush-website-eight.vercel.app/
+
+---
+
+## 🚀 Features
+
+- 🎨 Modern UI/UX Design
+- 📱 Fully Responsive Design (Mobile First)
+- 🏫 Home Page with Dynamic Hero Slider
+- ℹ️ About Page
+- 📚 Academics Section
+- 📝 Admissions
+- 👨‍🏫 Faculty
+- 🎉 Events
+- 🖼️ Gallery
+- 📞 Contact Page
+- 🔐 Login & Signup
+- ⚡ Fast Performance with Vite
+- 📊 Clean Layout with Tailwind CSS
+- 🌍 Cross Browser Compatible
+- 🎞️ Animated Sections with GSAP
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+| Technology | Purpose |
+|---|---|
+| React.js | UI Framework |
+| Vite | Build Tool |
+| React Router DOM | Client-side Routing |
+| Tailwind CSS | Utility-first Styling |
+| GSAP + ScrollTrigger | Animations |
+| React Slick | Carousel / Slider |
+| Lucide React | Icon Library |
+| Axios | HTTP Client |
+
+### Deployment
+
+| Platform | Purpose |
+|---|---|
+| Vercel | Frontend Deployment |
+
+### Version Control
+
+| Tool | Purpose |
+|---|---|
+| Git | Version Control |
+| GitHub | Remote Repository |
+
+---
+
+## 📂 Folder Structure
+
+```text
+frontend/
+│
+├── public/
+├── src/
+│   ├── assets/           # Images, icons, media files
+│   ├── components/       # Reusable UI components
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── ImpactBanner.jsx
+│   │   ├── WelcomeVideoSection.jsx
+│   │   ├── ManagementSection.jsx
+│   │   ├── LatestUpdatesSection.jsx
+│   │   ├── AboutSection.jsx
+│   │   └── AdmissionEnquirySection.jsx
+│   ├── layouts/          # Layout wrappers
+│   ├── pages/            # Route-level pages
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Admission.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Event.jsx
+│   │   ├── Faculity.jsx
+│   │   ├── Login.jsx
+│   │   └── Signup.jsx
+│   ├── services/         # API service functions
+│   ├── styles/           # Global styles
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── package.json
+├── vite.config.js
+└── vercel.json
+```
+
+---
+
+## 💻 Installation
+
+### Clone the Repository
 
 ```bash
-mern-institute-project/
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
-│
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middleware/
-│   ├── uploads/
-│   ├── server.js
-│   └── package.json
-│
-├── .gitignore
-├── README.md
-└── package.json
+git clone https://github.com/ayush31082005/DETTROIN-INT-Ayush-Website.git
+```
 
+### Go to Project Directory
 
-**Installation & Setup**
-**1️⃣ Clone Repository**
-git clone https://github.com/dhruvyadav123/Institute_project.git
+```bash
+cd DETTROIN-INT-Ayush-Website/frontend
+```
 
-**2️⃣ Install Dependencies**
-# frontend
-cd frontend
+### Install Dependencies
+
+```bash
 npm install
+```
 
-**# backend**
-cd backend
-npm install
+### Run Development Server
 
-**3️⃣ Environment Variables**
-Create .env inside backend:
-PORT=5000
-MONGO_URI=your_mongodb_url
-JWT_SECRET=your_secret_key
+```bash
+npm run dev
+```
 
-**4️⃣ Run Project**
-npm run devNAME.git
+### Create Production Build
+
+```bash
+npm run build
+```
+
+---
+
+## 📱 Responsive Support
+
+| Device | Status |
+|---|---|
+| 🖥️ Desktop (1280px+) | ✅ Supported |
+| 💻 Laptop (1024px+) | ✅ Supported |
+| 📱 Tablet (768px+) | ✅ Supported |
+| 📲 Mobile (< 768px) | ✅ Supported |
+
+---
+
+## 🎯 Project Objectives
+
+- ✅ Improve UI/UX of existing school website
+- ✅ Modern Responsive Design (Mobile First)
+- ✅ Better Navigation & User Flow
+- ✅ Clean Code Structure
+- ✅ Performance Optimization with Vite
+- ✅ Easy & Intuitive User Experience
+- ✅ GSAP Animations for visual richness
+- ✅ Single-slide mobile carousel for Instagram/Latest Updates
+
+---
+
+## 📌 Future Enhancements
+
+- [ ] Student Dashboard
+- [ ] Parent Dashboard
+- [ ] Teacher Dashboard
+- [ ] Online Admission Form
+- [ ] Fee Payment Integration
+- [ ] Attendance Management System
+- [ ] Online Results & Report Cards
+- [ ] Push Notifications
+
+---
+
+## 📷 Project Preview
+
+### 🏠 Home Page
+
+> Dynamic hero slider with K-12 college content, Latest Updates carousel, Management section, and Welcome Video.
+
+### 📖 About
+
+> Institutional overview, mission, vision, and faculty highlights.
+
+### 🎓 Academics
+
+> Stream-wise academic programs — Science, Commerce & Arts.
+
+### 📝 Admissions
+
+> Multi-step admission enquiry form with class and stream selection.
+
+### 📞 Contact
+
+> Map integration with contact details and enquiry form.
+
+---
+
+## 👤 Author
+
+**Ayush Chaubey**
+
+📧 ayushchaubey19768@gmail.com
+
+🌐 Portfolio: https://ayush-chaubey-portfolio-ebon.vercel.app/
+
+💻 GitHub: https://github.com/ayush31082005
+
+---
+
+## 📄 License
+
+This project was developed for the **DETTROIN Internship Assignment**.
+All rights reserved © 2025 Ayush Chaubey.
+
+---
+
+## ⭐ If you like this project, don't forget to give it a Star on GitHub!

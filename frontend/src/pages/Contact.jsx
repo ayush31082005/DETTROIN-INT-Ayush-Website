@@ -76,7 +76,7 @@ const Contact = () => {
 
               <div className="space-y-5">
                 {[
-                  { icon: "📍", label: "Address",      val: "Sanskriti International College, Near City Centre, Lucknow, UP – 226001" },
+                  { icon: "📍", label: "Address",      val: "NextGen College, Near City Centre, Lucknow, UP – 226001" },
                   { icon: "📞", label: "Phone",        val: "+91 98765 43210" },
                   { icon: "📧", label: "Email",        val: "info@sanskriticollege.edu" },
                   { icon: "🕐", label: "Office Hours", val: "Mon–Fri: 9 AM – 5 PM  |  Sat: 9 AM – 1 PM  |  Sun: Closed" },
@@ -187,7 +187,7 @@ const Contact = () => {
             <span className="text-xl">🗺️</span>
             <div>
               <h3 className="text-white font-extrabold text-base">Our Location</h3>
-              <p className="text-gray-400 text-xs">Sanskriti International College, Lucknow, Uttar Pradesh</p>
+              <p className="text-gray-400 text-xs">NextGen College, Lucknow, Uttar Pradesh</p>
             </div>
             <a
               href="https://www.openstreetmap.org/?mlat=26.8467&mlon=80.9462#map=15/26.8467/80.9462"
@@ -198,7 +198,7 @@ const Contact = () => {
             </a>
           </div>
           <iframe
-            title="Sanskriti International College Location"
+            title="NextGen College Location"
             className="w-full h-72 md:h-96"
             src="https://www.openstreetmap.org/export/embed.html?bbox=80.9262%2C26.8267%2C80.9662%2C26.8667&layer=mapnik&marker=26.8467%2C80.9462"
             style={{ border: 0 }}

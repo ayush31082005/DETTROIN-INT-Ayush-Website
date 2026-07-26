@@ -203,7 +203,7 @@ const Admission = () => {
           </h1>
           <p className="text-gray-300 text-base md:text-lg max-w-xl mx-auto">
             Secure your child's seat at{" "}
-            <strong className="text-white">Sanskriti International College</strong>{" "}
+            <strong className="text-white">NextGen College</strong>{" "}
             — from LKG Nursery to Class 12th CBSE Board.
           </p>
 
@@ -257,7 +257,7 @@ const Admission = () => {
                   className="w-full h-72 object-cover"
                 />
                 <div className="bg-slate-900/90 px-4 py-3 border-t border-slate-700/40">
-                  <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest">🏫 Sanskriti International College</p>
+                  <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest">🏫 NextGen College</p>
                   <p className="text-[11px] text-gray-400 mt-0.5">CBSE Affiliated · LKG to Class 12</p>
                 </div>
               </div>
@@ -571,7 +571,7 @@ const Admission = () => {
               </h2>
               <p className="text-gray-300 text-sm md:text-base max-w-md mx-auto mb-2">
                 Congratulations, <strong className="text-white">{formData.name}</strong>! Your admission to{" "}
-                <strong className="text-white">Sanskriti International College</strong> has been confirmed.
+                <strong className="text-white">NextGen College</strong> has been confirmed.
               </p>
               <p className="text-gray-400 text-sm mb-8">
                 A confirmation email has been sent to <span className="text-cyan-400">{formData.email}</span>.

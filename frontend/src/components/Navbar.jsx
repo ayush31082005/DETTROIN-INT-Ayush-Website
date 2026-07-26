@@ -49,7 +49,7 @@ function Navbar({ onReplayIntro }) {
               onClick={GoTop}
               className="text-xl font-bold tracking-wide flex items-center gap-2"
             >
-              Sanskriti International College
+              NextGen College
             </Link>
 
             {/* Mobile Button */}

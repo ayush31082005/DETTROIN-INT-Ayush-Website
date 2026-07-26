@@ -96,7 +96,7 @@ const Signup = () => {
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-xl font-extrabold shadow-xl">S</div>
-            <span className="text-white font-extrabold text-lg">Sanskriti International College</span>
+            <span className="text-white font-extrabold text-lg">NextGen College</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-snug mb-4">
             Join the{" "}
@@ -139,13 +139,13 @@ const Signup = () => {
           {/* Mobile logo */}
           <div className="flex lg:hidden items-center gap-3 mb-8 justify-center">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-xl font-extrabold shadow-xl">S</div>
-            <span className="text-white font-extrabold text-base">Sanskriti International College</span>
+            <span className="text-white font-extrabold text-base">NextGen College</span>
           </div>
 
           <div className="bg-slate-950/50 backdrop-blur-md border border-slate-700/50 rounded-3xl p-7 md:p-9 shadow-2xl">
             <div className="mb-6">
               <h1 className="text-2xl md:text-3xl font-extrabold text-white mb-1">Create Account 🎓</h1>
-              <p className="text-gray-400 text-sm">Join thousands of students at Sanskriti International College</p>
+              <p className="text-gray-400 text-sm">Join thousands of students at NextGen College</p>
             </div>
 
             {error && (

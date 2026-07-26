@@ -270,7 +270,7 @@ export default function Event() {
         <div className="relative z-10 px-6 py-20 max-w-4xl mx-auto">
           <div ref={heroBadgeRef} className="mb-6">
             <span className="inline-block bg-pink-500/20 border border-pink-400/50 text-pink-300 text-xs font-black uppercase tracking-[0.2em] px-5 py-2 rounded-full">
-              🎉 Sanskriti International College — LKG to 12th
+              🎉 NextGen College — LKG to 12th
             </span>
           </div>
 

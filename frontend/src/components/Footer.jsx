@@ -16,7 +16,7 @@ function Footer() {
         {/* College Info */}
         <div>
           <h3 className="text-2xl font-bold text-white mb-4">
-             Sanskriti International College
+             NextGen College
           </h3>
           <p className="text-sm leading-relaxed">
             Providing quality education since 1990. Your future starts here!
@@ -84,7 +84,7 @@ function Footer() {
 
       {/* Bottom Footer */}
       <div className="border-t border-slate-700 text-center py-4 text-sm text-gray-400">
-        © {new Date().getFullYear()}  Sanskriti International College. All rights reserved.
+        © {new Date().getFullYear()}  NextGen College. All rights reserved.
       </div>
     </footer>
   );

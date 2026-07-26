@@ -146,7 +146,7 @@ const About = () => {
         {/* Exact same image as reference site - children holding About Us banner */}
         <img
           src={aboutHeroChildren}
-          alt="About Us - Sanskriti International College Students"
+          alt="About Us - NextGen College Students"
           className="w-full h-auto block"
           style={{ display: "block", width: "100%", height: "auto" }}
         />
@@ -171,15 +171,15 @@ const About = () => {
           {/* Text */}
           <div className="intro-text space-y-3">
             <h2 className="text-2xl md:text-3xl font-extrabold text-cyan-400 leading-snug">
-              Sanskriti International College —{" "}
+              NextGen College —{" "}
               <span className="text-white">A Leading Institution in India</span>
             </h2>
             <div className="w-12 h-1 bg-cyan-500 rounded-full"></div>
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              <strong className="text-white">Sanskriti International College</strong> is a trusted name in technical and academic education, recognized as one of the leading institutes across India. With a strong commitment to academic excellence, discipline, and holistic development, the institute provides a nurturing environment where students grow into confident, responsible, and capable individuals.
+              <strong className="text-white">NextGen College</strong> is a trusted name in technical and academic education, recognized as one of the leading institutes across India. With a strong commitment to academic excellence, discipline, and holistic development, the institute provides a nurturing environment where students grow into confident, responsible, and capable individuals.
             </p>
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              Education at Sanskriti International College is designed to build strong academic foundations, inspire creativity, and prepare students for a successful future. The institution focuses on developing knowledge, skills, values, and character that help students thrive both academically and professionally.
+              Education at NextGen College is designed to build strong academic foundations, inspire creativity, and prepare students for a successful future. The institution focuses on developing knowledge, skills, values, and character that help students thrive both academically and professionally.
             </p>
             <Link
               to="/admissions"
@@ -342,7 +342,7 @@ const About = () => {
             </h2>
             <div className="w-16 h-1 bg-amber-500 rounded-full"></div>
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              Sanskriti International College follows a structured academic system that focuses on concept clarity and strong learning foundations.
+              NextGen College follows a structured academic system that focuses on concept clarity and strong learning foundations.
             </p>
             <p className="text-gray-400 text-sm md:text-base">Our academic approach includes:</p>
             <ul className="space-y-2 text-gray-300 text-sm md:text-base">
@@ -460,10 +460,10 @@ const About = () => {
 
             <div className="relative pl-6 border-l-4 border-cyan-500/60 space-y-3">
               <p className="text-gray-300 text-sm md:text-base leading-relaxed italic">
-                "Welcome to Sanskriti International College. Education is not merely about acquiring knowledge—it is about empowering young minds to think innovatively, solve real-world problems, and lead with integrity."
+                "Welcome to NextGen College. Education is not merely about acquiring knowledge—it is about empowering young minds to think innovatively, solve real-world problems, and lead with integrity."
               </p>
               <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                At Sanskriti International College, we are dedicated to fostering an environment where curiosity meets cutting-edge technical infrastructure. Our goal is to equip every student with future-ready skills, practical exposure, and unwavering confidence to excel on global platforms.
+                At NextGen College, we are dedicated to fostering an environment where curiosity meets cutting-edge technical infrastructure. Our goal is to equip every student with future-ready skills, practical exposure, and unwavering confidence to excel on global platforms.
               </p>
             </div>
 
@@ -482,7 +482,7 @@ const About = () => {
             ⭐ Why Choose Us
           </span>
           <h2 className="text-2xl md:text-4xl font-extrabold text-white mt-3">
-            Why Choose <span className="text-cyan-400">Sanskriti International College?</span>
+            Why Choose <span className="text-cyan-400">NextGen College?</span>
           </h2>
           <p className="text-gray-400 text-xs md:text-sm mt-2 max-w-2xl mx-auto">
             Discover what sets us apart as a premier institution for technical and academic excellence in India.
@@ -541,7 +541,7 @@ const About = () => {
               🚀 Admissions Open 2026-27
             </span>
             <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
-              Ready to Shape Your Career with <span className="text-cyan-400">Sanskriti International College?</span>
+              Ready to Shape Your Career with <span className="text-cyan-400">NextGen College?</span>
             </h2>
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
               Take the first step toward academic excellence and global opportunities. Join thousands of successful alumni today!

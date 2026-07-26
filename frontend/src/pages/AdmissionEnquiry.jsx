@@ -223,7 +223,7 @@ const AdmissionEnquiry = () => {
             </h1>
 
             <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-xl">
-              Give your child the gift of excellence at <strong className="text-white">Sanskriti International College</strong>. Fill out the quick enquiry form and our dedicated counsellors will assist you.
+              Give your child the gift of excellence at <strong className="text-white">NextGen College</strong>. Fill out the quick enquiry form and our dedicated counsellors will assist you.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">

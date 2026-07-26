@@ -108,7 +108,7 @@ const AboutSection = () => {
             <span className="w-8 h-[2px] bg-emerald-400 inline-block"></span>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-2">
-            Sanskriti International College
+            NextGen College
           </h2>
         </div>
 
@@ -160,7 +160,7 @@ const AboutSection = () => {
           {/* RIGHT COLUMN: TEXT DESCRIPTION */}
           <div ref={textRef} className="lg:col-span-6 space-y-4 md:space-y-6 text-gray-300 text-sm md:text-base leading-relaxed">
             <p>
-              Amongst the best technical & academic institutes, <strong className="text-white">Sanskriti International College</strong> is set amidst 15 acres of lush green campus, away from the city's noise and pollution. The institute provides an ideal environment for academic and co-curricular excellence.
+              Amongst the best technical & academic institutes, <strong className="text-white">NextGen College</strong> is set amidst 15 acres of lush green campus, away from the city's noise and pollution. The institute provides an ideal environment for academic and co-curricular excellence.
             </p>
 
             <p>

@@ -176,7 +176,7 @@ const AdmissionEnquirySection = () => {
             >
               <img
                 src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800"
-                alt="Admission at Sanskriti International College"
+                alt="Admission at NextGen College"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800";
@@ -188,7 +188,7 @@ const AdmissionEnquirySection = () => {
                 🎓 Admissions Open
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <p className="text-white font-bold text-sm md:text-base">Sanskriti International College — Shaping Future Leaders</p>
+                <p className="text-white font-bold text-sm md:text-base">NextGen College — Shaping Future Leaders</p>
               </div>
             </div>
 
@@ -196,7 +196,7 @@ const AdmissionEnquirySection = () => {
             <div ref={badgesRef} className="space-y-3">
               <h3 className="text-lg md:text-xl font-bold text-white mb-2">
                 Why Join{" "}
-                <span className="text-cyan-400">Sanskriti International College?</span>
+                <span className="text-cyan-400">NextGen College?</span>
               </h3>
               {highlights.map((item, i) => (
                 <div
