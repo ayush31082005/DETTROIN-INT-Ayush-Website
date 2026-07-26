@@ -193,7 +193,3 @@ _Add your contact page screenshot here._
 # 📄 License
 
 This project was developed for the **DETTROIN Internship Assignment**.
-
----
-
-## ⭐ If you like this project, don't forget to give it a Star.
