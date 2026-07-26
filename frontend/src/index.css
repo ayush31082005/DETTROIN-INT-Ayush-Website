@@ -67,12 +67,18 @@
   font-size: 12px !important;
 }
 
-/* Forced Mobile Responsive Slider Styles */
-@media (max-width: 640px) {
+/* Forced Mobile Responsive Slider Styles for Horizontal Swiping */
+@media (max-width: 768px) {
+  .latest-updates-slider .slick-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
   .latest-updates-slider .slick-slide {
     width: 100% !important;
     min-width: 100% !important;
     max-width: 100% !important;
+    flex-shrink: 0 !important;
     box-sizing: border-box !important;
   }
 }

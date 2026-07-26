@@ -1,11 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
-import Slider from "react-slick";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Instagram, ChevronLeft, ChevronRight, Heart } from "lucide-react";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import slide1 from "../assets/slide1.jpg";
 import slide2 from "../assets/slide2.jpeg";
@@ -15,30 +11,103 @@ import lab from "../assets/lab.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* ------------------------------------------------------------------ */
+/*  Tiny custom hook – returns current window inner width              */
+/* ------------------------------------------------------------------ */
+function useWindowWidth() {
+  const [width, setWidth] = React.useState(
+    typeof window !== "undefined" ? window.innerWidth : 1280
+  );
+  useEffect(() => {
+    const fn = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", fn);
+    return () => window.removeEventListener("resize", fn);
+  }, []);
+  return width;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Lightweight manual carousel (no react-slick on mobile)            */
+/* ------------------------------------------------------------------ */
+function MobileCarousel({ items, renderCard }) {
+  const [current, setCurrent] = React.useState(0);
+  const total = items.length;
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % total);
+
+  // Auto-advance
+  useEffect(() => {
+    const id = setInterval(next, 4000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="relative w-full overflow-hidden">
+      {/* Slide track */}
+      <div
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${current * 100}%)` }}
+      >
+        {items.map((item, i) => (
+          <div
+            key={item.id}
+            className="w-full flex-shrink-0 px-3 py-2"
+          >
+            {renderCard(item)}
+          </div>
+        ))}
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-4">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+              i === current ? "bg-lime-400 scale-125" : "bg-white/30"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Desktop grid (simple CSS grid, no slider)                          */
+/* ------------------------------------------------------------------ */
+function DesktopGrid({ items, renderCard, cols }) {
+  const gridClass =
+    cols === 4
+      ? "grid grid-cols-4 gap-4"
+      : cols === 3
+      ? "grid grid-cols-3 gap-4"
+      : "grid grid-cols-2 gap-4";
+
+  return (
+    <div className={gridClass}>
+      {items.map((item) => (
+        <div key={item.id} className="py-2">
+          {renderCard(item)}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Main component                                                      */
+/* ------------------------------------------------------------------ */
 const LatestUpdatesSection = () => {
-  const sliderRef = useRef(null);
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
-  const [slidesToShow, setSlidesToShow] = useState(4);
+  const width = useWindowWidth();
 
-  useEffect(() => {
-    const handleResize = () => {
-      const w = window.innerWidth;
-      if (w <= 640) {
-        setSlidesToShow(1);
-      } else if (w <= 960) {
-        setSlidesToShow(2);
-      } else if (w <= 1280) {
-        setSlidesToShow(3);
-      } else {
-        setSlidesToShow(4);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isMobile = width <= 640;
+  const isTablet = width > 640 && width <= 1024;
+  const desktopCols = width > 1280 ? 4 : 3;
 
   const updates = [
     {
@@ -120,7 +189,6 @@ const LatestUpdatesSection = () => {
         }
       );
     }, sectionRef);
-
     return () => ctx.revert();
   }, []);
 
@@ -129,40 +197,63 @@ const LatestUpdatesSection = () => {
     e.target.src = slide1;
   };
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: slidesToShow,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 960,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-        },
-      },
-    ],
-  };
+  const renderCard = (item) => (
+    <div className="bg-white text-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 hover:-translate-y-2 transition-all duration-300 flex flex-col h-[430px] group w-full">
+      {/* Image */}
+      <div className="relative h-48 w-full overflow-hidden bg-slate-950 flex-shrink-0">
+        <img
+          src={item.image}
+          alt={item.title}
+          onError={handleImageError}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-95"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-3.5 text-white">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300">
+            {item.badgeText}
+          </span>
+          <h4 className="text-sm font-extrabold line-clamp-1 drop-shadow-md">
+            {item.subText}
+          </h4>
+        </div>
+      </div>
+
+      {/* Avatar */}
+      <div className="relative flex justify-center -mt-5 z-10">
+        <div className="w-10 h-10 rounded-full bg-blue-900 border-2 border-white flex items-center justify-center shadow-lg font-black text-white text-sm">
+          G
+        </div>
+      </div>
+
+      {/* Handle info */}
+      <div className="text-center px-3 pt-1 pb-1">
+        <p className="font-extrabold text-xs text-slate-900">{item.handle}</p>
+        <p className="text-[10px] text-gray-500 font-medium">
+          @{item.handle} • {item.date}
+        </p>
+        <div className="flex items-center justify-center mt-1">
+          <div className="p-1 rounded-lg bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white shadow-sm">
+            <Instagram className="w-3.5 h-3.5" />
+          </div>
+        </div>
+      </div>
+
+      {/* Caption + Likes */}
+      <div className="px-4 pb-4 pt-1 flex-1 flex flex-col justify-between">
+        <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed text-center">
+          {item.caption}
+        </p>
+        <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-gray-500 font-semibold px-1">
+          <span className="flex items-center gap-1 text-pink-500">
+            <Heart className="w-3.5 h-3.5 fill-pink-500" />
+            {item.likes} likes
+          </span>
+          <span className="text-blue-600 hover:underline cursor-pointer font-bold">
+            View Post →
+          </span>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section
@@ -182,99 +273,26 @@ const LatestUpdatesSection = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M 5 6 Q 100 12, 195 6 Q 100 0, 5 6"
-                  fill="currentColor"
-                />
+                <path d="M 5 6 Q 100 12, 195 6 Q 100 0, 5 6" fill="currentColor" />
               </svg>
             </span>
           </h2>
         </div>
 
-        {/* CAROUSEL WRAPPER */}
-        <div className="latest-updates-slider relative px-1 sm:px-4 pb-6">
-          <button
-            onClick={() => sliderRef.current?.slickPrev()}
-            className="hidden md:flex absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 z-20 bg-white text-slate-900 p-2.5 md:p-3 rounded-full shadow-2xl hover:bg-lime-400 hover:scale-110 transition-all border border-slate-200"
-            aria-label="Previous Slide"
-          >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-
-          <button
-            onClick={() => sliderRef.current?.slickNext()}
-            className="hidden md:flex absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 z-20 bg-white text-slate-900 p-2.5 md:p-3 rounded-full shadow-2xl hover:bg-lime-400 hover:scale-110 transition-all border border-slate-200"
-            aria-label="Next Slide"
-          >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-
-          <Slider key={slidesToShow} ref={sliderRef} {...sliderSettings}>
-            {updates.map((item) => (
-              <div key={item.id} className="px-2 sm:px-3 py-2">
-                <div className="bg-white text-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 hover:-translate-y-2 transition-all duration-300 flex flex-col h-[430px] sm:h-[440px] md:h-[450px] group max-w-sm sm:max-w-none mx-auto">
-                  <div className="relative h-48 sm:h-48 md:h-52 w-full overflow-hidden bg-slate-950">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      onError={handleImageError}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-95"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-3.5 text-white">
-                      <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-300">
-                        {item.badgeText}
-                      </span>
-                      <h4 className="text-xs sm:text-sm md:text-base font-extrabold line-clamp-1 drop-shadow-md">
-                        {item.subText}
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div className="relative flex justify-center -mt-5 z-10">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-blue-900 border-2 border-white flex items-center justify-center shadow-lg font-black text-white text-sm sm:text-base">
-                      G
-                    </div>
-                  </div>
-
-                  <div className="text-center px-3 pt-1 pb-1">
-                    <p className="font-extrabold text-xs sm:text-sm text-slate-900">
-                      {item.handle}
-                    </p>
-                    <p className="text-[10px] sm:text-xs text-gray-500 font-medium">
-                      @{item.handle} • {item.date}
-                    </p>
-                    <div className="flex items-center justify-center mt-1">
-                      <div className="p-1 rounded-lg bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white shadow-sm">
-                        <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="px-4 pb-4 pt-1 flex-1 flex flex-col justify-between">
-                    <p className="text-xs sm:text-xs md:text-sm text-gray-600 line-clamp-3 leading-relaxed text-center">
-                      {item.caption}
-                    </p>
-
-                    <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-gray-500 font-semibold px-1">
-                      <span className="flex items-center gap-1 text-pink-500">
-                        <Heart className="w-3.5 h-3.5 fill-pink-500" />
-                        {item.likes} likes
-                      </span>
-                      <span className="text-blue-600 hover:underline cursor-pointer font-bold">
-                        View Post &rarr;
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
+        {/* CAROUSEL / GRID */}
+        {isMobile ? (
+          /* ---- MOBILE: custom 1-at-a-time slider ---- */
+          <MobileCarousel items={updates} renderCard={renderCard} />
+        ) : isTablet ? (
+          /* ---- TABLET: 2-column grid ---- */
+          <DesktopGrid items={updates} renderCard={renderCard} cols={2} />
+        ) : (
+          /* ---- DESKTOP: 3 or 4-column grid ---- */
+          <DesktopGrid items={updates} renderCard={renderCard} cols={desktopCols} />
+        )}
       </div>
     </section>
   );
 };
 
 export default LatestUpdatesSection;
-
-
